@@ -23,6 +23,7 @@ FROM python:3.8.2-alpine3.11
 
 RUN apk add --no-cache \
     bash \
+    sshpass \
     ca-certificates \
     git \
     openssl \
@@ -30,7 +31,6 @@ RUN apk add --no-cache \
     libffi \
     libxslt \
     libxml2
-
 
 # copy the python dependencies
 COPY --from=builder /install /usr/local
